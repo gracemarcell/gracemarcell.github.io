@@ -32,6 +32,7 @@ var background = function (window) {
         // add objects for display in background. draws each image added to the background once
         function render() {
             background.removeAllChildren();
+            draw.bitmap(img/planet.png)
 
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow

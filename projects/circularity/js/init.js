@@ -33,13 +33,17 @@ var init = function (window) {
         };
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        game.checkCirclePosition = function(_circle) {
-            for (var drawCircle = 0; drawCircle < 100; drawCircle++) {};
-        };
+        // game.checkCirclePosition = function(_circle) {
+        //     for (var drawCircle = 0; drawCircle < 100; drawCircle++) {};
+        // };
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
-        
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
         /* 
         This Function is called 60 times/second producing 60 frames/second.
         In each frame, for every circle, it should redraw that circle
@@ -87,15 +91,15 @@ var init = function (window) {
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
-            // if (circle.x > canvas.height) {
-            //     circle.x = 0;
-            // };
-            // if (y < 0) {
-            //     circle.x = 0;
-            // };
-            // if (x < 0) {
-            //     circle.x = 0;
-            // };
+            if (circle.y > canvas.height) {
+                circle.x = 0;
+            };
+            if (circle.y < 0) {
+                circle.x = 0;
+            };
+            if (circle.x < 0) {
+                circle.x = 0;
+            };
             var rightEdge = circle.x + circle.radius;
             var leftEdge = circle.x + circle.radius;
             var topEdge = circle.x + circle.radius;
