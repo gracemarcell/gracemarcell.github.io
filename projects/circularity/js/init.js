@@ -93,15 +93,15 @@ var init = function (window) {
             if (circle.x > canvas.width) {
                 circle.x = 0;
             };
-            //if the circle has gone past the LEFT side of the screen then place it on the RIGHT
+             if (circle.x < 0) {
+                circle.x = canvas.width;
+            };
             if (circle.y > canvas.height) {
-                circle.x = 0;
+                circle.y = 0;
             };
+           
             if (circle.y < 0) {
-                circle.x = 0;
-            };
-            if (circle.x < 0) {
-                circle.x = 0;
+                circle.y = canvas.height;
             };
             var rightEdge = circle.x + circle.radius;
             var leftEdge = circle.x + circle.radius;
