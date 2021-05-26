@@ -55,7 +55,7 @@ var level01 = function (window) {
     createSawBlade(275, 300);
     createSawBlade(650, 200);
     createSawBlade(800, 300);
-    createFire (600, 250);
+    createFire (940, 250);
    
     function createFire(x,y) {
     var Hitbox = game.createObstacle(hitZoneSize, damageFromObstacle);
