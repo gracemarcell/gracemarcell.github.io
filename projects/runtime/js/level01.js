@@ -23,13 +23,61 @@ var level01 = function (window) {
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
+    var hitZoneSize = 25;
+    var damageFromObstacle = 10;
+    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+    sawBladeHitZone.x = 400;
+    sawBladeHitZone.y = 190;
+    game.addGameItem(sawBladeHitZone);
+    var obstacleImage = draw.bitmap('img/sawblade.png');
+    sawBladeHitZone.addChild(obstacleImage);
+    obstacleImage.x = -25;
+    obstacleImage.y = -25;
 
-        
-        
+    //sawblade
+    function createSawBlade(x, y) {
+    var sizeOfHitZone = 25;
+    var damageFromObstacle = 10;
+    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+    sawBladeHitZone.x = x;
+    sawBladeHitZone.y = y;
+    game.addGameItem(sawBladeHitZone);
+    var obstacleImage = draw.bitmap('img/sawblade.png');
+    sawBladeHitZone.addChild(obstacleImage);
+    obstacleImage.x = -25;
+    obstacleImage.y = -25;
+    }
+
+    createSawBlade(275, 300);
+    createSawBlade(650, 200);
+    createSawBlade(800, 300);
+    createFire (600, 250);
+   
+    function createFire(x,y) {
+    var Hitbox = game.createObstacle(hitZoneSize, damageFromObstacle);
+    Hitbox.x = x;
+    Hitbox.y = y;
+    game.addGameItem(Hitbox);
+    var Image = draw.bitmap('img/fire.png');
+    Hitbox.addChild(Image);
+};
+
+//enemy
+var enemy = game.createGameItem('enemy',25);
+var redSquare = draw.rect(50,50,'red');
+redSquare.x = -25;
+redSquare.y = -25;
+enemy.addChild(redSquare);
+//enemy position
+enemy.x = 400;
+enemy.y = groundY-50;
+game.addGameItem(enemy);
+
+
         
         // DO NOT EDIT CODE BELOW HERE
     }
